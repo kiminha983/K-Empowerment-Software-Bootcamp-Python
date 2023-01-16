@@ -1,32 +1,15 @@
-print("My kitty cat likes %s,\nMy kitty cat likes %s,\nMy kitty cat fell on his %s\nAnd now thinks he's a %s." % ('roast beef', 'ham', 'head', 'clam'))
+# while
 
-questions = [
-"We don't serve strings around here. Are you a string?",
-"What is said on Father's Day in the forest?",
-"What makes the sound 'Sis! Boom! Bah!'?"
-]
-answers = [
-"An exploding sheep.",
-"No, I'm a frayed knot.",
-"'Pop!' goes the weasel."
-]
-print(f'Q:{questions[0]}')
-print(f'A:{answers[0]}')
-print(f'Q:{questions[1]}')
-print(f'A:{answers[1]}')
-print(f'Q:{questions[2]}')
-print(f'A:{answers[2]}')
+while True:
+    dan = int(input('Dan (0 to quit): '))
 
-song = """When an eel grabs your arm,
-And it causes great harm,
-That's - a moray!"""
+    if dan == 0:  # exit
+        break
+    if 1 < dan < 10:  # if dan >= 2 and dan <= 9:
+        i = 1
+        while i < 10:
+            print('{0} * {1} = {2}'.format(dan, i, dan * i))
+            i = i + 1
+    else:
+        print('2에서 9사이의 값을 입력 하세요')
 
-song_list = song.split()
-print(song_list)
-song_list[14] = song_list[14].title()
-song_string = ' '.join(song_list)
-print(song_string)
-
-#idx = song.rfind('m')
-#song = song.replace(song[idx], song[idx].upper())
-#print(song.endswith('moray!'))
