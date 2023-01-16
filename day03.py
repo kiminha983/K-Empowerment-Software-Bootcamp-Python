@@ -1,13 +1,14 @@
-# for
+# prime number v0.1
 
-while True:
-    dan = int(input('Dan (0 to quit): '))
+number = int(input("input number : "))
+counts = 0
 
-    if dan == 0:  # exit
-        break
-    if 1 < dan < 10:  # if dan >= 2 and dan <= 9:
-        for i in range(1, 10):
-            print('{0} * {1} = {2}'.format(dan, i, dan * i))
-    else:
-        print('2에서 9사이의 값을 입력 하세요')
-
+k = 1
+while k <= number:
+    if number % k == 0:
+        counts = counts + 1
+    k = k + 1
+if counts == 2:
+    print(f'{number} is prime number!')
+else:
+    print(f'{number} is NOT prime number.')
