@@ -1,13 +1,29 @@
-print("I'm a\tboy")
+subjects = ' $ python, data structure, database    $$$'
+print(subjects.title())
+print(subjects.count('data'))
+print(subjects.rfind('data'), subjects.rindex('data'))
+print(subjects.find('data'), subjects.index('data'))
+print(subjects.find('inha'))  # -1 return
+# print(subjects.index('inha'))  # Exception!
 
-# army = '''우리는 국가와 국민에 충성을 다하는 대한민국 육군이다.
-# 하나 우리는 자유민주주의를 수호하며 조국 통일의 역군이 된다'''
-
-army = '우리는 국가와 국민에 충성을 다하는 대한민국 육군이다.\t하나 우리는 자유민주주의를 수호하며 조국 통일의 역군이 된다'
-print(army)
-
-start = '나 ' * 4 + '\n'
-middle = '헤이 ' * 3 + '\n'
-end = '안녕.'
-print(start + start + middle + end)
-
+# subjects = ' $ python, data structure, database    $$$'
+# print(subjects.strip('$'))
+#
+# inha = 'a duck goes into a sea'
+# print(inha.replace('a', 'a nice'))
+#
+# pokemons_list = ['피카츄', '꼬부기', '이상해', '파이리']
+# pokemons_string = '/'.join(pokemons_list)
+# print(pokemons_string)
+#
+# univ = 'Inha University'
+# print(univ.split())
+#
+# print(len(univ))
+# print(univ[-10:-6])
+# print(univ[5:-6])
+# print(univ[::2])
+# print(univ[5:])
+# print(univ[5:15])
+# print(univ[-10:])
+#
