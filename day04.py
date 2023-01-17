@@ -23,6 +23,9 @@ print(exo)
 # exo.remove('인하')  # not in exo
 exo[2].remove('인하')
 print(exo)
+exo.clear()
+print(exo)
+
 
 # scores = ('B+', 'A+', 'C+')
 # print(scores[1], scores[2])
