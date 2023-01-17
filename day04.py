@@ -1,15 +1,31 @@
 # 안주 추천 프로그램 v0.2
 import random
 
-alcohol_foods = {
-    '맥주': '치킨',
-    '소주': '골뱅이 소면',
-    '위스키': '치즈',
-    '고량주': '짬뽕'
-}
+word = '인하대학교인하하!'
+letter_counts = {letter: word.count(letter) for letter in set(word)}
+print(letter_counts)
+
+# alcohol_foods = {
+#     '맥주': '치킨',
+#     '소주': '골뱅이 소면',
+#     '와인': '치즈',
+#     '고량주': '짬뽕'
+# }
+alcohol_foods = dict(맥주='치킨', 소주='골뱅이 소면', 와인='치즈', 고량주='짬뽕')
+# alcohol_foods.clear()
 alcohol_list = list(alcohol_foods)  # extract keys
 food_list = [food for food in alcohol_foods.values()]  # extract values and append list
 # print(alcohol_list, food_list)
+
+for food in enumerate(food_list):  # tuple return
+    print(food[1])
+
+# for i in range(len(food_list)):
+#     print(food_list[i])
+
+# for food in food_list:
+#     print(food)
+
 while True:
     alcohol = input(f'술을 선택 하세요 1) {alcohol_list[0]} 2) {alcohol_list[1]} 3) {alcohol_list[2]} 4) {alcohol_list[3]} 5) 아무거나 6) 계산 : ')
     if alcohol == '6':
