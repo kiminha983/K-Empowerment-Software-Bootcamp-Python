@@ -1,8 +1,3 @@
-def sub_int(x, y):
-    return x - y
-
-
-# decorator
 def document_info(func):
     def new_function(*args, **kwargs):
         print('실행 중인 함수:', func.__name__)
@@ -13,8 +8,15 @@ def document_info(func):
         return result
     return new_function
 
+@document_info
+def sub_int(x, y):
+    return x - y
+
+@document_info
+def squares(n):
+    return n * n
+
 
 print(sub_int(7, 3))
-info_sub_int = document_info(sub_int)
-r = info_sub_int(7, 3)
-print(r)
+print(squares(5))
+
