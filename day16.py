@@ -1,3 +1,6 @@
+import random
+
+
 class Node:
     def __init__(self, data):
         self.data = data
@@ -100,11 +103,52 @@ def is_find(find_data):
 
     return False
 
-head, current, pre = None, None, None
-data_array = ["피카츄", "라이츄", "꼬부기", "파이리", "이상해"]
 
+def count_odd_even():
+    global head, current
+
+    even, odd = 0, 0
+
+    # SRP 위배
+    # if head == None:
+    #     return False
+
+    current = head
+    while True:
+        if current.data % 2 == 0:
+            even = even + 1
+        else:
+            odd = odd + 1
+        if current.link == head:
+            break
+        current = current.link
+
+    return odd, even
+
+
+def makeSquareNumber(odd, even):
+    if odd > even:
+        remainder = 1
+    else:
+        remainder = 0
+
+    current = head
+    while True:
+        if current.data % 2 == remainder:
+            current.data = current.data * current.data
+        if current.link == head:
+            break
+        current = current.link
+
+
+head, current, pre = None, None, None
+data_array = list()
 
 if __name__ == "__main__":
+    # odd_even = count_odd_even()  # False 리턴
+    for _ in range(7):
+        data_array.append(random.randint(1, 10))
+
     node = Node(data_array[0])
     head = node
     node.link = head
@@ -115,25 +159,8 @@ if __name__ == "__main__":
         pre.link = node
         node.link = head
 
-
-    print(is_find('꼬부기'))
-    print(is_find('성윤모'))
-    print(find_nodes('꼬부기').data)
-    print(find_nodes('김인하').data)
-    print(find_nodes('피카츄').data)
-
-    # print_nodes(head)
-    # delete_nodes("피카츄")
-    # print_nodes(head)
-    # delete_nodes("파이리")
-    # print_nodes(head)
-    # delete_nodes("김인하")
-    # print_nodes(head)
-
-    # print_nodes(head)
-    # insert_nodes("피카츄", "잠만보")
-    # print_nodes(head)
-    # insert_nodes("파이리", "어니부기")
-    # print_nodes(head)
-    # insert_nodes("성윤모", "거북왕")
-    # print_nodes(head)
+    print_nodes(head)
+    odd_even = count_odd_even()
+    print(f'Odd Number : {odd_even[0]}, Even Number {odd_even[1]}')
+    makeSquareNumber(odd_even[0], odd_even[1])
+    print_nodes(head)
